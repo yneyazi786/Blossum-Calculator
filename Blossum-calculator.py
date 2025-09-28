@@ -2,9 +2,25 @@
 # coding: utf-8
 
 # In[1]:
-
-
 import streamlit as st
+st.markdown("""
+<style>
+body {
+    background-color: #121212;
+    color: white;
+}
+h1 {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-weight: bold;
+}
+.stSelectbox > div {
+    background-color: #2a2a2a;
+    color: white;
+    border-radius: 5px;
+}
+</style>
+""", unsafe_allow_html=True)
+
 
 # Define amino acids and BLOSUM62 scores based on the image
 amino_acids = ["C", "S", "T", "P", "A", "G", "N", "D",
