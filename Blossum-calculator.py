@@ -42,7 +42,7 @@ for i in range(20):
         blosum_matrix[i, j] = blosum[i][j]
         blosum_matrix[j, i] = blosum[i][j]
 
-st.title("BLOSUM Score Lookup")
+st.title("BLOSUM S")
 
 wt_aa = st.selectbox("Select wildtype amino acid:", amino_acids)
 mut_aa = st.selectbox("Select mutated amino acid:", amino_acids)
