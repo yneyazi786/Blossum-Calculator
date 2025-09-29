@@ -25,11 +25,15 @@ BLOSUM62 = {
 }
 
 # Streamlit app
+amino_acids = [
+    'A', 'R', 'N', 'D', 'C', 'Q', 'E', 'G', 'H', 'I',
+    'L', 'K', 'M', 'F', 'P', 'S', 'T', 'W', 'Y', 'V'
+]
 st.set_page_config(page_title='BLOSUM Score Calculator', layout='centered')
 st.title('BLOSUM62 Mutation Score Calculator')
 
-wt = st.text_input('Wildtype amino acid (single-letter code)').upper().strip()
-mut = st.text_input('Mutant amino acid (single-letter code)').upper().strip()
+wt = st.selectbox('Wildtype amino acid',amino_acids)
+mut = st.text_input('Mutant amino acid', amino_acids)
 
 if st.button('Calculate'):
     if wt not in BLOSUM62 or mut not in BLOSUM62:
