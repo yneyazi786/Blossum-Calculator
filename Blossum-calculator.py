@@ -47,7 +47,7 @@ amino_acids = {
     'Tyr': 'Y',
     'Val': 'V'
 }
-amino_a=list(aa_three_to_one.keys())
+amino_a=list(amino_acids.keys())
 st.set_page_config(page_title='BLOSUM Score Calculator', layout='centered')
 st.title('BLOSUM62 Mutation Score Calculator')
 
