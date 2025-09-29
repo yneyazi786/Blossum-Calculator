@@ -25,19 +25,39 @@ BLOSUM62 = {
 }
 
 # Streamlit app
-amino_acids = [
-    'A', 'R', 'N', 'D', 'C', 'Q', 'E', 'G', 'H', 'I',
-    'L', 'K', 'M', 'F', 'P', 'S', 'T', 'W', 'Y', 'V'
-]
+amino_acids = {
+    'Ala': 'A',
+    'Arg': 'R',
+    'Asn': 'N',
+    'Asp': 'D',
+    'Cys': 'C',
+    'Gln': 'Q',
+    'Glu': 'E',
+    'Gly': 'G',
+    'His': 'H',
+    'Ile': 'I',
+    'Leu': 'L',
+    'Lys': 'K',
+    'Met': 'M',
+    'Phe': 'F',
+    'Pro': 'P',
+    'Ser': 'S',
+    'Thr': 'T',
+    'Trp': 'W',
+    'Tyr': 'Y',
+    'Val': 'V'
+}
+amino_a=list(aa_three_to_one.keys())
 st.set_page_config(page_title='BLOSUM Score Calculator', layout='centered')
 st.title('BLOSUM62 Mutation Score Calculator')
 
-wt = st.selectbox('Wildtype amino acid',amino_acids)
-mut = st.selectbox('Mutant amino acid', amino_acids)
-
+wt_three = st.selectbox('Wildtype amino acid',amino_a)
+mut_three = st.selectbox('Mutant amino acid', amino_a)
+wt= amino_acids[wt_three]
+mut=amino_acids[mut_three]
 if st.button('Calculate'):
     if wt not in BLOSUM62 or mut not in BLOSUM62:
-        st.error('Please enter valid one-letter amino acid codes (e.g., A, R, N, D, ...).')
+        st.error('Please enter valid amino acid')
     else:
         score = BLOSUM62[wt][mut]
         st.success(f'BLOSUM62 score for {wt} → {mut} is {score}')
