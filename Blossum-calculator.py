@@ -33,7 +33,7 @@ st.set_page_config(page_title='BLOSUM Score Calculator', layout='centered')
 st.title('BLOSUM62 Mutation Score Calculator')
 
 wt = st.selectbox('Wildtype amino acid',amino_acids)
-mut = st.text_input('Mutant amino acid', amino_acids)
+mut = st.selectbox('Mutant amino acid', amino_acids)
 
 if st.button('Calculate'):
     if wt not in BLOSUM62 or mut not in BLOSUM62:
